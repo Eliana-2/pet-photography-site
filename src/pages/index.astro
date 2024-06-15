@@ -1,11 +1,34 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Pawprint Photography" headerShadow={false}>
 	<main>
+    <div class="card-container">
+      <Card hasBorder={false}, isOrange={true}, heading="Heading", text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec purus quam, consequat vel sollicitudin ut, faucibus non eros. Donec ut magna luctus, pellentesque magna nec, lobortis lacus.'></Card>
+      <Card hasBorder={false}, isOrange={true}, heading="Heading", text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec purus quam, consequat vel sollicitudin ut, faucibus non eros. Donec ut magna luctus, pellentesque magna nec, lobortis lacus."></Card>
+      <Card hasBorder={false}, isOrange={true}, heading="Heading", text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec purus quam, consequat vel sollicitudin ut, faucibus non eros. Donec ut magna luctus, pellentesque magna nec, lobortis lacus."></Card>
+    </div>
 	</main>
 </Layout>
 
 <style>
+  main {
+    display: flex;
+    justify-content: center;
+  }
+  .card-container
+   {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1000px;
+    padding: 2rem;
+  }
+  @media (max-width: 600px) {
+    .card-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
 </style>

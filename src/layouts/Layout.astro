@@ -1,9 +1,7 @@
 ---
-interface Props {
-	title: string;
-}
-
-const { title } = Astro.props;
+const { title, headerShadow } = Astro.props;
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1);
 ---
 
 <!doctype html>
@@ -12,12 +10,217 @@ const { title } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="/pet-photography-site/favicon.svg" />
 		<title>{title}</title>
 	</head>
 	<body>
-		<slot />
+    <header class={headerShadow ? "header-shadow" : ""}>
+      <nav>
+        <a class="mobile-logo" aria-label="Home"><img src="/pet-photography-site/icons/logo.svg" class="logo" height="62"></a>
+        <button class="nav-button"><img src="/pet-photography-site/icons/menu.svg" class="nav-icon"></button>
+        <div class="nav-links">
+          <a class={currentPath === "pet-photography-site" ? "nav-link active" : "nav-link"} href="/pet-photography-site/about">About</a>
+          <a class={currentPath === "pet-photography-site" ? "nav-link active" : "nav-link"} href="/pet-photography-site/gallery">Gallery</a>
+          <a class="nav-link-logo" href="/pet-photography-site/" aria-label="Home"><img src="/pet-photography-site/icons/logo.svg" class="logo" height="68"></a>
+          <a class={currentPath === "pet-photography-site" ? "nav-link active" : "nav-link"} href="/pet-photography-site/services">Services</a>
+          <a class={currentPath === "pet-photography-site" ? "nav-link active" : "nav-link"} href="/pet-photography-site/contact">Contact</a>
+        </div>
+      </nav>
+    </header>
+    <div class="content-container">
+      <slot />
+    </div>
+		<footer>
+			<div class="footer-container">
+        <div class="footer-contact">
+          <p>Contact us</p>
+          <address>1234 Paw Street<br/>
+          email@email.com<br/>
+          111-222-333
+          </address>
+        </div>
+        <a class="footer-logo" href=""><img src="/pet-photography-site/icons/logo_dark.svg" class="logo" height="68"></a>
+        <div class="footer-socials">
+          <p>Follow us on</p>
+          <div class="socials">
+            <a class="social link" href="" aria-label="Instagram"><img src="/pet-photography-site/icons/instagram.svg" class="social" height="37"></a>
+            <a class="social link" href="" aria-label="Facebook"><img src=/pet-photography-site/icons/facebook.svg class="social" height="37"></a>
+            <a class="social link" href="" aria-label="Twitter"><img src="/pet-photography-site/icons/twitter.svg" class="social" height="37"></a>
+          </div>
+        </div>
+      </div>
+		</footer>
 	</body>
 </html>
 <style is:global>
+  @font-face {
+    font-family: 'DM Serif Text';
+    src: url('/pet-photography-site/fonts/dm-serif-text.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'PT Serif';
+    src: url('/pet-photography-site/fonts/pt-serif.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+    size-adjust: 90%;
+  }
+  :root {
+    font-size: 120%;
+    --heading-font: 'DM Serif Text', serif;
+    --body-font: 'PT Serif', serif;
+    --orange: #cd7523;
+    --green: #2f6313;
+    --dark-green: #1b3c0a;
+  }
+  html {
+    font-family: var(--body-font);
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--heading-font);
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  @media (max-width: 1000px) {
+    :root {
+      font-size: 110%;
+    }
+  }
 </style>
+<style>
+  body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  header {
+    padding: 2rem;
+  }
+  .header-shadow {
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 20%);
+  }
+  nav {
+    margin: 0 auto;
+    max-width: 1000px;
+  }
+  .mobile-logo {
+    width: 8rem;
+    display: none;
+  }
+  .nav-button {
+    margin-left: auto;
+    display: none;
+    background-color: inherit;
+    border: none;
+  }
+  .nav-icon {
+    width: 2rem;
+  }
+  .nav-links {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  nav a {
+    color: black;
+    font-size: 1.25rem;
+    text-decoration: none;
+  }
+  .logo {
+    width: 8rem;
+  }
+  .nav-links {
+    display; flex;
+  }
+  .content-container {
+    flex: 1;
+    height: auto;
+  }
+  footer {
+    background-color: black;
+    padding: 2rem;
+    color: white;
+  }
+  footer p {
+    font-size: 1.1rem;
+  }
+  .footer-container {
+    margin: 0 auto;
+    max-width: 1000px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .footer-logo {
+    width: 8rem;
+  }
+  .footer-socials {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .socials {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+  .social {
+    width: 2rem;
+  }
+  @media (max-width: 600px) {
+    header {
+      position: relative;
+      z-index: 5;
+    }
+    nav {
+      margin: 0;
+      display: flex;
+    }
+    .mobile-logo {
+      display: inline;
+    }
+    .nav-button {
+      display: inline-block;
+    }
+    .nav-link-logo {
+      display: none;
+    }
+    .nav-links {
+      z-index: 6;
+      opacity: 90%;
+      background-color: white;
+      display: none;
+      margin-top: 5.9rem;
+      padding: 2rem;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: center;
+    }
+    .footer-container {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  }
+  .nav-links-toggle {
+    display: flex;
+  }
+</style>
+<script>
+  document.querySelector('.nav-button').addEventListener('click', (e) => {
+    e.currentTarget.nextElementSibling.classList.toggle('nav-links-toggle');
+  })
+</script>
