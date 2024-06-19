@@ -1,29 +1,150 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
+import '@splidejs/splide/css';
 ---
 
 <Layout title="Pawprint Photography" headerShadow={false}>
 	<main>
-    <div class="card-container">
-      <Card hasBorder={false}, isOrange={true}, heading="Heading", text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec purus quam, consequat vel sollicitudin ut, faucibus non eros. Donec ut magna luctus, pellentesque magna nec, lobortis lacus.'></Card>
-      <Card hasBorder={false}, isOrange={true}, heading="Heading", text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec purus quam, consequat vel sollicitudin ut, faucibus non eros. Donec ut magna luctus, pellentesque magna nec, lobortis lacus."></Card>
-      <Card hasBorder={false}, isOrange={true}, heading="Heading", text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec purus quam, consequat vel sollicitudin ut, faucibus non eros. Donec ut magna luctus, pellentesque magna nec, lobortis lacus."></Card>
-    </div>
+    <section class="splide" id="hero-carousel" aria-label="Splide Basic HTML Example">
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide"><img src="/pet-photography-site/2LsSEal.jpeg"></li>
+        </ul>
+      </div>
+    </section>
+    <h1>Celebrate your Furry Friends</h1>
+    <h2>Capture precious memories to cherish forever</h2>
+    <section class="card-container">
+      <Card hasBorder={false}, isOrange={true}, img={'/pet-photography-site/ndAebZM.png'}, heading="Heading", text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec purus quam, consequat vel sollicitudin ut, faucibus non eros. Donec ut magna luctus, pellentesque magna nec, lobortis lacus.'></Card>
+      <Card hasBorder={false}, isOrange={true}, img={'/pet-photography-site/kpepfML.png'}, heading="Heading", text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec purus quam, consequat vel sollicitudin ut, faucibus non eros. Donec ut magna luctus, pellentesque magna nec, lobortis lacus."></Card>
+      <Card hasBorder={false}, isOrange={true}, img={'/pet-photography-site/wN2MhJT.png'}, heading="Heading", text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec purus quam, consequat vel sollicitudin ut, faucibus non eros. Donec ut magna luctus, pellentesque magna nec, lobortis lacus."></Card>
+    </section>
+    <section class="cta">
+      <h2>Let us help you make those unforgettable memories with your pets last forever</h2>
+      <a href="#">Contact Us</a>
+    </section>
+    <section class="testimonials">
+      <h2>We have helped over 100 satisfied pet owners capture their memories</h2>
+      <section class="splide" id="testimonials" aria-label="Splide Basic HTML Example">
+        <div class="splide__track">
+          <ul class="splide__list">
+            <li class="splide__slide">
+              <div class="testimonials__card">
+                <img src="/pet-photography-site/wN2MhJT.png" width="50px" height="50px">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec purus quam, consequat vel sollicitudin ut, faucibus non eros. Donec ut magna luctus, pellentesque magna nec, lobortis lacus.</p>
+              </div>
+            </li>
+            <li class="splide__slide">
+              <div class="testimonials__card">
+                <img src="/pet-photography-site/wN2MhJT.png" width="50px" height="50px">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec purus quam, consequat vel sollicitudin ut, faucibus non eros. Donec ut magna luctus, pellentesque magna nec, lobortis lacus.</p>
+              </div>
+            </li>
+            <li class="splide__slide">
+              <div class="testimonials__card">
+                <img src="/pet-photography-site/wN2MhJT.png" width="50px" height="50px">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec purus quam, consequat vel sollicitudin ut, faucibus non eros. Donec ut magna luctus, pellentesque magna nec, lobortis lacus.</p>
+              </div>
+            </li>
+            <li class="splide__slide">
+              <div class="testimonials__card">
+                <img src="/pet-photography-site/wN2MhJT.png" width="50px" height="50px">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec purus quam, consequat vel sollicitudin ut, faucibus non eros. Donec ut magna luctus, pellentesque magna nec, lobortis lacus.</p>
+              </div>
+            </li>
+            <li class="splide__slide">
+              <div class="testimonials__card">
+                <img src="/pet-photography-site/wN2MhJT.png" width="50px" height="50px">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec purus quam, consequat vel sollicitudin ut, faucibus non eros. Donec ut magna luctus, pellentesque magna nec, lobortis lacus.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+    </section>
+    </section>
 	</main>
 </Layout>
 
 <style>
+  img {
+    width: 100%;
+    height: 90vh;
+    object-fit: cover;
+  }
+  #hero-carousel {
+    width: 100%;
+    height: 90vh;
+    margin-bottom: 2.5rem;
+  }
+  .splide_slide {
+    width: 100%;
+  }
   main {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
   }
   .card-container
    {
     display: flex;
     justify-content: space-between;
     max-width: 1000px;
-    padding: 2rem;
+    padding: 2.5rem;
+  }
+  h1, h2 {
+    color: var(--green);
+    text-align: center;
+  }
+  .cta {
+    padding: 1.5rem 0 1.5rem 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--dark-green);
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .cta h2 {
+    max-width: 60ch;
+    color: white;
+  }
+  a {
+    text-decoration: none;
+    color: white;
+    font: var(--heading-font);
+    font-size: 1.4rem;
+    padding: 1rem 3rem 1rem 3rem;
+    background-color: var(--orange);
+    border-radius: 100px;
+    box-shadow: 4px 4px 4px rgb(0 0 0 /20%);
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  .testimonials {
+    margin-block: 2.5rem;
+    width: 100%;
+    max-width: 1000px;
+  }
+  .testimonials h2 {
+    margin-bottom: 2.5rem;
+    color: var(--orange)
+  }
+  .testimonials__card {
+    display: flex;
+    margin-top: 1px;
+    border: 1px solid black;
+    box-shadow: 4px 4px 4px rgb(0 0 0 /20%);
+    & img {
+      width: 20%;
+      height: 20%;
+    }
+    & p {
+      height: 300px;%;
+    }
   }
   @media (max-width: 600px) {
     .card-container {
@@ -32,3 +153,27 @@ import Card from '../components/Card.astro';
     }
   }
 </style>
+
+<script>
+  import Splide from '@splidejs/splide';
+
+  new Splide( '#hero-carousel', {
+    width: '100%',
+  } ).mount();
+
+  new Splide( '#testimonials', {
+    width: '100%',
+    perPage: 3,
+    gap: '2.5rem',
+    padding: '2.5rem',
+    height: 'auto',
+    breakpoints : {
+      850: {
+        perPage: 2,
+      },
+      550: {
+        perPage: 1,
+      }
+    }
+  }).mount();
+</script>
