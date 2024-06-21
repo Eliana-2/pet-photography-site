@@ -13,8 +13,10 @@ import '@splidejs/splide/css';
         </ul>
       </div>
     </section>
-    <h1>Celebrate your Furry Friends</h1>
-    <h2>Capture precious memories to cherish forever</h2>
+    <section class="intro">
+      <h1>Celebrate your Furry Friends</h1>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi earum sed quam assumenda eveniet ut et. A ex quisquam necessitatibus? Officia saepe hic temporibus quos eveniet quas numquam odio repudiandae?</p>
+    </section>
     <section class="card-container">
       <Card hasBorder={false}, isOrange={true}, img={'/pet-photography-site/ndAebZM.png'}, heading="Heading", text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec purus quam, consequat vel sollicitudin ut, faucibus non eros. Donec ut magna luctus, pellentesque magna nec, lobortis lacus.'></Card>
       <Card hasBorder={false}, isOrange={true}, img={'/pet-photography-site/kpepfML.png'}, heading="Heading", text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec purus quam, consequat vel sollicitudin ut, faucibus non eros. Donec ut magna luctus, pellentesque magna nec, lobortis lacus."></Card>
@@ -96,6 +98,14 @@ import '@splidejs/splide/css';
   h1, h2 {
     color: var(--green);
     text-align: center;
+    padding-inline: 0.5rem;
+  }
+  .intro p {
+    margin-top: 1rem;
+    max-width: 60ch;
+    color: var(--green);
+    padding-inline: 1.5rem;
+    text-align: center;
   }
   .cta {
     padding: 1.5rem 0 1.5rem 0;
@@ -146,11 +156,21 @@ import '@splidejs/splide/css';
       height: 300px;%;
     }
   }
+  @media (max-width: 750px) {
+    .card-container {
+      padding: 2.5rem 1rem 2.5rem 1rem;
+    }
+  }
   @media (max-width: 600px) {
     .card-container {
       flex-direction: column;
       align-items: center;
     }
+  @media (max-width: 400px) {
+    .card-container {
+      padding: 2.5rem 0.5rem 2.5rem 0.5rem;
+    }
+  }
   }
 </style>
 
