@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
+import CtaButton from '../components/CtaButton.astro';
 import '@splidejs/splide/css';
 ---
 
@@ -37,7 +38,7 @@ import '@splidejs/splide/css';
     </section>
     <section class="cta">
       <h2>Let us help you make those unforgettable memories with your pets last forever</h2>
-      <a href="#">Contact Us</a>
+      <CtaButton/>
     </section>
     <section class="testimonials">
       <h2>We have helped over 100 satisfied pet owners capture their memories</h2>
@@ -84,13 +85,13 @@ import '@splidejs/splide/css';
 <style>
   img {
     width: 100%;
-    height: 90vh;
+    height: 90dvh;
     object-fit: cover;
   }
   #hero-carousel {
     width: 100%;
-    height: 90vh;
-    margin-bottom: 2.5rem;
+    height: 90dvh;
+    margin-bottom: var(--padding-large);
   }
   .splide_slide {
     width: 100%;
@@ -106,7 +107,7 @@ import '@splidejs/splide/css';
     display: flex;
     justify-content: space-between;
     max-width: 1000px;
-    padding: 2.5rem;
+    padding: var(--padding-large);
   }
   h1, h2 {
     color: var(--green);
@@ -114,10 +115,10 @@ import '@splidejs/splide/css';
     padding-inline: 0.5rem;
   }
   .intro p {
-    margin-top: 1rem;
+    margin-top: var(--padding-small);
     max-width: 60ch;
     color: var(--green);
-    padding-inline: 1.5rem;
+    padding-inline: var(--padding-medium);
     text-align: center;
   }
   .intro h1 {
@@ -127,39 +128,26 @@ import '@splidejs/splide/css';
     font-size: 1.5rem;
   }
   .cta {
-    padding: 1.5rem 0 1.5rem 0;
+    padding: var(--padding-medium) 0;
     width: 100%;
     display: flex;
     flex-direction: column;
     background-color: var(--dark-green);
     justify-content: center;
     align-items: center;
-    gap: 1.5rem;
+    gap: var(--padding-medium);
   }
   .cta h2 {
     max-width: 60ch;
     color: white;
   }
-  a {
-    text-decoration: none;
-    color: white;
-    font: var(--heading-font);
-    font-size: 1.4rem;
-    padding: 1rem 3rem 1rem 3rem;
-    background-color: var(--orange);
-    border-radius: 100px;
-    box-shadow: 4px 4px 4px rgb(0 0 0 /20%);
-  }
-  a:hover {
-    text-decoration: underline;
-  }
   .testimonials {
-    margin-block: 2.5rem;
+    margin-block: var(--padding-large);
     width: 100%;
     max-width: 1000px;
   }
   .testimonials h2 {
-    margin-bottom: 2.5rem;
+    margin-bottom: var(--padding-large);
     color: var(--orange)
   }
   .testimonials__card {
@@ -177,7 +165,7 @@ import '@splidejs/splide/css';
   }
   @media (max-width: 750px) {
     .card-container {
-      padding: 2.5rem 1rem 2.5rem 1rem;
+      padding: var(--padding-large) 1rem;
     }
   }
   @media (max-width: 600px) {
@@ -190,7 +178,7 @@ import '@splidejs/splide/css';
     }
   @media (max-width: 400px) {
     .card-container {
-      padding: 2.5rem 0.5rem 2.5rem 0.5rem;
+      padding: var(--padding-large) 0.5rem;
     }
   }
   }
