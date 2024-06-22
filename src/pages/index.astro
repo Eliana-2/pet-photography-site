@@ -9,12 +9,25 @@ import '@splidejs/splide/css';
     <section class="splide" id="hero-carousel" aria-label="Splide Basic HTML Example">
       <div class="splide__track">
         <ul class="splide__list">
-          <li class="splide__slide"><img src="/pet-photography-site/2LsSEal.jpeg"></li>
+          <li class="splide__slide" data-splide-interval="5000">
+            <picture>
+              <source media="(max-width: 599px)" srcset="/pet-photography-site/heroadjusted.jpeg" />
+              <source media="(min-width: 600px)" srcset="/pet-photography-site/2LsSEal.jpeg" />
+              <img src="/pet-photography-site/2LsSEal.jpeg"/>
+            </picture>
+          </li>
+          <li class="splide__slide" data-splide-interval="5000">
+            <img src="/pet-photography-site/cat-5778777_1920.jpg"/>
+          </li>
+          <li class="splide__slide" data-splide-interval="5000">
+            <img src="/pet-photography-site/guinea-pig-2513177_1920.jpg"/>
+          </li>
         </ul>
       </div>
     </section>
     <section class="intro">
       <h1>Celebrate your Furry Friends</h1>
+      <h2>Capture precious memories to cherish forever</h2>
       <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi earum sed quam assumenda eveniet ut et. A ex quisquam necessitatibus? Officia saepe hic temporibus quos eveniet quas numquam odio repudiandae?</p>
     </section>
     <section class="card-container">
@@ -107,6 +120,12 @@ import '@splidejs/splide/css';
     padding-inline: 1.5rem;
     text-align: center;
   }
+  .intro h1 {
+    font-size: 2rem; 
+  }
+  .intro h2 {
+    font-size: 1.5rem;
+  }
   .cta {
     padding: 1.5rem 0 1.5rem 0;
     width: 100%;
@@ -166,6 +185,9 @@ import '@splidejs/splide/css';
       flex-direction: column;
       align-items: center;
     }
+    .intro h2 {
+      display: none;
+    }
   @media (max-width: 400px) {
     .card-container {
       padding: 2.5rem 0.5rem 2.5rem 0.5rem;
@@ -179,14 +201,18 @@ import '@splidejs/splide/css';
 
   new Splide( '#hero-carousel', {
     width: '100%',
+    autoplay: true,
+    type: 'loop',
+    speed: 900,
   } ).mount();
 
   new Splide( '#testimonials', {
     width: '100%',
     perPage: 3,
     gap: '2.5rem',
-    padding: '2.5rem',
+    padding: '2.4rem',
     height: 'auto',
+    type: 'loop',
     breakpoints : {
       850: {
         perPage: 2,
@@ -196,4 +222,5 @@ import '@splidejs/splide/css';
       }
     }
   }).mount();
+  
 </script>
