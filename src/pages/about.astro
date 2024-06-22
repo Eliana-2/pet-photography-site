@@ -1,54 +1,56 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import CtaButton from '../components/CtaButton.astro';
 ---
 
 <Layout title="Pawprint Photography" headerShadow={true}>
   <main>
-    <div class="div">
       <div class="wrapper">
-        <div class="summary">
+        <section class="summary">
           <h1>Picture perfect pets of all kinds</h1>
           <h2>Pet-focused photography starring your animal companions</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent feugiat dictum auctor. Sed sed euismod sapien. Donec ut blandit ligula, vel viverra nisi. Sed luctus tellus vitae sodales ultrices. Duis ultrices pretium mauris, vel tincidunt metus accumsan quis.Quisque erat risus, elementum ac mattis eu, ornare vel mauris. In ut purus sit amet magna pharetra mollis ac sodales neque. Etiam faucibus erat et velit ultrices vestibulum. Donec id urna risus. Ut eget odio egestas, dictum leo sed, ornare ex.</p>
-        </div>
+        </section>
       </div>
       <div class="wrapper">
-        <div class="container story">
+        <section class="container story">
           <img src="/pet-photography-site/story.png">
           <div class="story-text">
             <h2>Our Story</h2>
             <p>Nulla eleifend aliquet augue et lobortis. Sed tempus tincidunt maximus. Maecenas sapien magna, rhoncus quis turpis lobortis, euismod molestie neque. Cras fermentum, tortor id rhoncus dapibus, purus lorem pretium diam, sit amet aliquam turpis diam quis orci. Pellentesque vehicula ultrices urna, eu vehicula mi.</p>
           </div>
-        </div>
+        </section>
       </div>
       <div class="cta-wrapper">
-        <div class="cta">
-          <p>Capture your memories with us today!</p>
-          <a class="cta-link" href="/pet-photography-site/">Contact Us</a>
-        </div>
+        <section class="cta">
+          <h2>Capture your memories with us today!</h2>
+          <CtaButton></CtaButton>
+        </section>
       </div>
       <div class="wrapper">
-        <div class="container mission">
+        <section class="container mission">
           <img src="/pet-photography-site/mission.png">
           <div class="mission-text">
             <h2>Our Mission</h2>
             <p>Nulla eleifend aliquet augue et lobortis. Sed tempus tincidunt maximus. Maecenas sapien magna, rhoncus quis turpis lobortis, euismod molestie neque. Cras fermentum, tortor id rhoncus dapibus, purus lorem pretium diam, sit amet aliquam turpis diam quis orci. Pellentesque vehicula ultrices urna, eu vehicula mi.</p>
           </div>
-        </div>
+        </section>
       </div>
-    </div>
   </main>
 </Layout>
 
 <style>
-  .div {
-    padding: 2rem 0;
+  section h1 {
+    font-size: 2rem;
+  }
+  main {
+    padding: var(--padding-large) 0;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
   .wrapper {
-    padding: 3rem;
+    padding: var(--padding-large);
   }
   .summary, .container {
     width: 100%;
@@ -66,10 +68,10 @@ import Layout from '../layouts/Layout.astro';
     border-radius: 10px;
     box-shadow: 4px 4px 4px rgb(0 0 0 / 20%);
     display: flex;
-    gap: 1rem;
+    gap: 0.5rem;
   }
   .story-text, .mission-text{
-    padding: 1rem;
+    padding: var(--padding-small);
   }
   .story img {
     border-radius: 10px 0 0 10px;
@@ -83,10 +85,10 @@ import Layout from '../layouts/Layout.astro';
   }
   .cta-wrapper {
     width: 100%;
-    padding: 2rem 0;
+    padding: var(--padding-large) 0;
   }
   .cta {
-    padding: 2rem;
+    padding: var(--padding-large);
     background-color: var(--dark-green);
     width: 100%;
     display: flex;
@@ -95,19 +97,6 @@ import Layout from '../layouts/Layout.astro';
     gap: 1.5rem;
     align-items: center;
     color: white;
-    font-size: 1.25rem;
-  }
-  .cta-link {
-    padding: 0.7rem 1.4rem;
-    font-size: 1.2rem;
-    background-color: var(--orange);
-    border-radius: 10rem;
-    text-decoration: none;
-    color: white;
-    box-shadow: 4px 4px 4px rgb(0 0 0 / 20%);
-  }
-  .cta-link:hover {
-    text-decoration: underline;
   }
   .mission {
     flex-direction: row-reverse;
@@ -124,20 +113,20 @@ import Layout from '../layouts/Layout.astro';
     }
   }
   @media(max-width: 400px) {
-    .div {
-      padding: 1rem 0;
+    main {
+      padding: var(--padding-small) 0;
     }
     .wrapper {
-      padding: 2rem 0;
+      padding: var(--padding-medium) 0;
     }
     .cta-wrapper {
-      padding: 1rem 0;
+      padding: var(--padding-small) 0;
     }
     .cta {
-      padding: 1rem;
+      padding: var(--padding-small);
     }
     .container {
-      padding: 0 1.5rem;
+      padding: 0 var(--padding-medium);
       border: none;
       box-shadow: none;
     }
@@ -148,7 +137,7 @@ import Layout from '../layouts/Layout.astro';
       padding: 0;
     }
     .summary {
-      padding: 0 1.5rem;
+      padding: 0 var(--padding-medium);
     }
     .summary h2 {
       display: none;
