@@ -1,0 +1,19 @@
+---
+const {text="Contact Us"} = Astro.props;
+---
+
+<a href="/pet-photography-site/contact">{text}</a>
+<style>
+  a {
+    padding: 0.7rem 1.4rem;
+    font-size: 1.2rem;
+    background-color: var(--orange);
+    border-radius: 10rem;
+    text-decoration: none;
+    color: white;
+    box-shadow: 4px 4px 4px rgb(0 0 0 / 20%);
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+</style>

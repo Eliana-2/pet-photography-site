@@ -16,7 +16,7 @@ const currentPath = pathname.slice(1);
 	<body>
     <header class={headerShadow ? "header-shadow" : ""}>
       <nav>
-        <a class="mobile-logo" aria-label="Home"><img src="/pet-photography-site/icons/logo.svg" class="logo" height="62"></a>
+        <a class="mobile-logo" aria-label="Home" href="/pet-photography-site/"><img src="/pet-photography-site/icons/logo.svg" class="logo" height="62"></a>
         <button class="nav-button"><img src="/pet-photography-site/icons/menu.svg" class="nav-icon"></button>
         <div class="nav-links">
           <a class={currentPath === "pet-photography-site" ? "nav-link active" : "nav-link"} href="/pet-photography-site/about">About</a>
@@ -39,7 +39,7 @@ const currentPath = pathname.slice(1);
           111-222-333
           </address>
         </div>
-        <a class="footer-logo" href=""><img src="/pet-photography-site/icons/logo_dark.svg" class="logo" height="68"></a>
+        <a class="footer-logo" href="/pet-photography-site/"><img src="/pet-photography-site/icons/logo_dark.svg" class="logo" height="68"></a>
         <div class="footer-socials">
           <p>Follow us on</p>
           <div class="socials">
@@ -75,6 +75,9 @@ const currentPath = pathname.slice(1);
     --orange: #cd7523;
     --green: #2f6313;
     --dark-green: #1b3c0a;
+    --padding-large: 2.5rem;
+    --padding-medium: 1.5rem;
+    --padding-small: 1rem;
   }
   html {
     font-family: var(--body-font);
