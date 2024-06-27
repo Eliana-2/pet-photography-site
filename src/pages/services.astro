@@ -1,13 +1,20 @@
 ---
 import Card from '../components/Card.astro';
 import Layout from '../layouts/Layout.astro';
+import CtaButton from '../components/CtaButton.astro';
 ---
 
 
 <Layout title="Pawprint Photography">
   <main>
     <div class="hero">
-  
+      <div class="hero-container">
+        <section class="hero-content">
+          <h1>Services that can't be beat</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, at vero aperiam deleniti, dignissimos sunt corrupti dolorum alias, exercitationem aspernatur ea perspiciatis. Eligendi repellendus ex voluptates eaque dolorum velit sed? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, at vero aperiam deleniti, dignissimos sunt corrupti dolorum alias, exercitationem aspernatur ea perspiciatis. Eligendi repellendus ex voluptates eaque dolorum velit sed?</p>
+          <CtaButton></CtaButton>
+        </section>
+      </div>
     </div>
     <div class="wrapper">
       <section class="description">
@@ -32,37 +39,41 @@ import Layout from '../layouts/Layout.astro';
           <section class="package-card">
             <h3>Basic Package</h3>
             <ul>
-              <li>2-hour session with your pet(s)</li>
+              <li>1-hour session with your pet(s)</li>
               <li>Styling advice</li>
               <li>Photo editing</li>
-              <li>Gallery of 30 images to choose for individual purchase</li>
-              <li>2 free prints</li>
+              <li>Gallery of 30 images available for individual purchase</li>
+              <li>5 digital images of your choice</li>
+              <li>Prints available for $25 each</li>
             </ul>
             <p>$300</p>
           </section>
           <section class="package-card">
-            <h3>Basic Package</h3>
+            <h3>Pawprint Package</h3>
             <ul>
-              <li>2-hour session with your pet(s)</li>
+              <li>1.5-hour session with your pet(s)</li>
               <li>Styling advice</li>
               <li>Photo editing</li>
-              <li>Gallery of 30 images to choose for individual purchase</li>
-              <li>2 free prints</li>
+              <li>Gallery of 50 images available for individual purchase</li>
+              <li>15 digital images of your choice</li>
+              <li>5 free prints</li>
             </ul>
-            <p>$300</p>
+            <p>$700</p>
           </section>
           <section class="package-card">
-            <h3>Basic Package</h3>
+            <h3>Fur-ever Package</h3>
             <ul>
               <li>2-hour session with your pet(s)</li>
               <li>Styling advice</li>
               <li>Photo editing</li>
-              <li>Gallery of 30 images to choose for individual purchase</li>
-              <li>2 free prints</li>
+              <li>Access to full gallery of 80 digital images</li>
+              <li>Client closet and full selection of pet props available</li>
+              <li>10 free prints</li>
             </ul>
-            <p>$300</p>
+            <p>$1200</p>
           </section>
         </div>
+        <CtaButton></CtaButton>
       </section>
     </div>
   </main>
@@ -75,6 +86,41 @@ import Layout from '../layouts/Layout.astro';
   .process-wrapper {
     background-color: var(--dark-green);
   }
+  .hero {
+    position: relative;
+    width: 100%;
+    height: 675px;
+    z-index: 1;
+  }
+  .hero:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    opacity: 0.9;
+    height: 675px;
+    width: 100%;
+    background-image: url('/pet-photography-site/services_hero.jpg');
+    background-size: cover;
+    background-position: top;
+    z-index: -1;
+  }
+  .hero-container {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+  }
+  .hero-content {
+    margin-top: 10%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    max-width: 500px;
+    padding: 2rem;
+
+  }
   .description {
     padding: var(--padding-large);
     max-width: 1000px;
@@ -83,7 +129,7 @@ import Layout from '../layouts/Layout.astro';
     text-align: center;
   }
   .description-cards {
-    margin-top: 1rem;
+    margin-top: 2.5rem;
     display: flex;
     justify-content: space-between;
   }
@@ -102,9 +148,12 @@ import Layout from '../layouts/Layout.astro';
   .packages {
     padding: var(--padding-large);
     max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    align-items: center;
   }
   .package-cards {
-    margin-top: 1rem;
     display: flex;
     justify-content: space-between;
   }
@@ -118,6 +167,11 @@ import Layout from '../layouts/Layout.astro';
     border: 2px solid var(--dark-green);
     border-radius: 2rem;
     box-shadow: 4px 4px 4px 0 rgb(0 0 0 / 20%);
+  }
+  .package-card h3 {
+    color: var(--orange);
+  }
+  .package-card p {
   }
   .packages h2 {
     text-align: center;
