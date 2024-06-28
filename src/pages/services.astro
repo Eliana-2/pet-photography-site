@@ -12,7 +12,7 @@ import CtaButton from '../components/CtaButton.astro';
         <section class="hero-content">
           <h1>Services that can't be beat</h1>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, at vero aperiam deleniti, dignissimos sunt corrupti dolorum alias, exercitationem aspernatur ea perspiciatis. Eligendi repellendus ex voluptates eaque dolorum velit sed? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, at vero aperiam deleniti, dignissimos sunt corrupti dolorum alias, exercitationem aspernatur ea perspiciatis. Eligendi repellendus ex voluptates eaque dolorum velit sed?</p>
-          <CtaButton></CtaButton>
+          <CtaButton class="hide"></CtaButton>
         </section>
       </div>
     </div>
@@ -97,7 +97,6 @@ import CtaButton from '../components/CtaButton.astro';
     top: 0;
     left: 0;
     content: "";
-    opacity: 0.9;
     height: 675px;
     width: 100%;
     background-image: url('/pet-photography-site/services_hero.jpg');
@@ -106,7 +105,10 @@ import CtaButton from '../components/CtaButton.astro';
     z-index: -1;
   }
   .hero-container {
+    position: relative;
+    z-index: 1;
     width: 50%;
+    height: 100%;
     display: flex;
     justify-content: center;
   }
@@ -119,7 +121,19 @@ import CtaButton from '../components/CtaButton.astro';
     gap: 1.5rem;
     max-width: 500px;
     padding: 2rem;
-
+  }
+  .hero-content:after {
+    opacity: 50%;
+    background-color: var(--dark-green);
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .hero-content h1 {
+    text-align: center;
   }
   .description {
     padding: var(--padding-large);
@@ -180,5 +194,53 @@ import CtaButton from '../components/CtaButton.astro';
     list-style-position: inside;
     list-style-type: '- '
   }
-
+  @media (max-width: 800px) {
+    .packages, .description, .process{
+      padding: var(--padding-large) var(--padding-small);
+    }
+  }
+  @media (max-width: 650px) {
+    .packages, .description, .process{
+      padding: var(--padding-medium) var(--padding-small);
+      gap: 1.5rem;
+    }
+    .package-cards, .description-cards {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .description-cards {
+      margin-top: 1.5rem;
+    }
+    .package-card {
+      width: 100%;
+      max-width: 400px;
+    }
+  }
+  @media (max-width: 600px) {
+    .hero, .hero:after {
+      height: 450px;
+    }
+    .hero:after {
+      background-position:80% top;
+    }
+    .hero-container {
+      width: 100%;
+      align-items: center;
+    }
+    .hero-content {
+      margin-top: 0;
+      padding: var(--padding-small);
+    }
+  }
+  @media (max-width: 450px) {
+    .hero, .hero:after {
+      height: 300px;
+    }
+    .hero-content p {
+      display: none;
+    }
+    .hide {
+      display: none;
+    }
+  }
 </style>
