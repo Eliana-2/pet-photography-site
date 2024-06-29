@@ -1,0 +1,146 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CtaButton from '../components/CtaButton.astro';
+---
+
+<Layout title="Pawprint Photography" headerShadow={true}>
+  <main>
+      <div class="wrapper">
+        <section class="summary">
+          <h1>Picture perfect pets of all kinds</h1>
+          <h2>Pet-focused photography starring your animal companions</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent feugiat dictum auctor. Sed sed euismod sapien. Donec ut blandit ligula, vel viverra nisi. Sed luctus tellus vitae sodales ultrices. Duis ultrices pretium mauris, vel tincidunt metus accumsan quis.Quisque erat risus, elementum ac mattis eu, ornare vel mauris. In ut purus sit amet magna pharetra mollis ac sodales neque. Etiam faucibus erat et velit ultrices vestibulum. Donec id urna risus. Ut eget odio egestas, dictum leo sed, ornare ex.</p>
+        </section>
+      </div>
+      <div class="wrapper">
+        <section class="container story">
+          <img src="/pet-photography-site/story.png">
+          <div class="story-text">
+            <h2>Our Story</h2>
+            <p>Nulla eleifend aliquet augue et lobortis. Sed tempus tincidunt maximus. Maecenas sapien magna, rhoncus quis turpis lobortis, euismod molestie neque. Cras fermentum, tortor id rhoncus dapibus, purus lorem pretium diam, sit amet aliquam turpis diam quis orci. Pellentesque vehicula ultrices urna, eu vehicula mi.</p>
+          </div>
+        </section>
+      </div>
+      <div class="cta-wrapper">
+        <section class="cta">
+          <h2>Capture your memories with us today!</h2>
+          <CtaButton></CtaButton>
+        </section>
+      </div>
+      <div class="wrapper">
+        <section class="container mission">
+          <img src="/pet-photography-site/mission.png">
+          <div class="mission-text">
+            <h2>Our Mission</h2>
+            <p>Nulla eleifend aliquet augue et lobortis. Sed tempus tincidunt maximus. Maecenas sapien magna, rhoncus quis turpis lobortis, euismod molestie neque. Cras fermentum, tortor id rhoncus dapibus, purus lorem pretium diam, sit amet aliquam turpis diam quis orci. Pellentesque vehicula ultrices urna, eu vehicula mi.</p>
+          </div>
+        </section>
+      </div>
+  </main>
+</Layout>
+
+<style>
+  section h1 {
+    font-size: 2rem;
+  }
+  main {
+    padding: var(--padding-large) 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .wrapper {
+    padding: var(--padding-large);
+  }
+  .summary, .container {
+    width: 100%;
+    max-width: 1000px;
+  }
+  .summary h1, h2 {
+    text-align: center;
+  }
+  .summary p {
+    text-align: center;
+    margin-top: 1rem;
+  }
+  .container {
+    border: 1px solid var(--orange);
+    border-radius: 10px;
+    box-shadow: 4px 4px 4px rgb(0 0 0 / 20%);
+    display: flex;
+    gap: 0.5rem;
+  }
+  .story-text, .mission-text{
+    padding: var(--padding-small);
+  }
+  .story img {
+    border-radius: 10px 0 0 10px;
+    width: 50%;
+    height: auto;
+  }
+  .mission img {
+    border-radius: 0 10px 10px 0;
+    width: 50%;
+    height: auto;
+  }
+  .cta-wrapper {
+    width: 100%;
+    padding: var(--padding-large) 0;
+  }
+  .cta {
+    padding: var(--padding-large);
+    background-color: var(--dark-green);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+    align-items: center;
+    color: white;
+  }
+  .mission {
+    flex-direction: row-reverse;
+  }
+  @media(max-width: 800px) {
+    .container {
+      border-width: 2px;
+      flex-direction: column;
+      align-items: center;
+    }
+    .mission img, .story img {
+      width: 100%;
+      border-radius: 0;
+    }
+  }
+  @media(max-width: 400px) {
+    main {
+      padding: var(--padding-small) 0;
+    }
+    .wrapper {
+      padding: var(--padding-medium) 0;
+    }
+    .cta-wrapper {
+      padding: var(--padding-small) 0;
+    }
+    .cta {
+      padding: var(--padding-small);
+    }
+    .container {
+      padding: 0 var(--padding-medium);
+      border: none;
+      box-shadow: none;
+    }
+    .container h2 {
+      color: var(--orange);
+    }
+    .story-text, .mission-text {
+      padding: 0;
+    }
+    .summary {
+      padding: 0 var(--padding-medium);
+    }
+    .summary h2 {
+      display: none;
+    }
+  }
+</style>
