@@ -12,7 +12,7 @@ import CtaButton from '../components/CtaButton.astro';
         <section class="hero-content">
           <h1>Services that can't be beat</h1>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, at vero aperiam deleniti, dignissimos sunt corrupti dolorum alias, exercitationem aspernatur ea perspiciatis. Eligendi repellendus ex voluptates eaque dolorum velit sed? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, at vero aperiam deleniti, dignissimos sunt corrupti dolorum alias, exercitationem aspernatur ea perspiciatis. Eligendi repellendus ex voluptates eaque dolorum velit sed?</p>
-          <CtaButton class="hide"></CtaButton>
+          <CtaButton hide={true}></CtaButton>
         </section>
       </div>
     </div>
@@ -134,6 +134,7 @@ import CtaButton from '../components/CtaButton.astro';
   }
   .hero-content h1 {
     text-align: center;
+    font-size: 2rem;
   }
   .description {
     padding: var(--padding-large);
@@ -215,8 +216,6 @@ import CtaButton from '../components/CtaButton.astro';
       width: 100%;
       max-width: 400px;
     }
-  }
-  @media (max-width: 600px) {
     .hero, .hero:after {
       height: 450px;
     }
@@ -237,9 +236,6 @@ import CtaButton from '../components/CtaButton.astro';
       height: 300px;
     }
     .hero-content p {
-      display: none;
-    }
-    .hide {
       display: none;
     }
   }
