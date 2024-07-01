@@ -29,7 +29,7 @@ import '@splidejs/splide/css';
     <section class="intro">
       <h1>Celebrate your Furry Friends</h1>
       <h2>Capture precious memories to cherish forever</h2>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi earum sed quam assumenda eveniet ut et. A ex quisquam necessitatibus? Officia saepe hic temporibus quos eveniet quas numquam odio repudiandae?</p>
+      <p>Have you ever wanted to see just how cute your pets could look with a bit of a professional touch? We are a family-owned business with years of experience in animal photography. Our goal is to highlight the uniqeness of your cuddly friends and the special connection you have with them. We also offer various packages and services for your specific needs.</p>
     </section>
     <section class="card-container">
       <Card hasBorder={false}, isOrange={true}, img={'/pet-photography-site/images/ndAebZM.png'}, heading="Preserve Memories", text='Make sure your memories are acessible whenever you want to revist them. Browse your image gallery on any device or purchase prints to frame and display.'></Card>
@@ -37,11 +37,11 @@ import '@splidejs/splide/css';
       <Card hasBorder={false}, isOrange={true}, img={'/pet-photography-site/images/boy_dog.jpg'}, heading="Capture Friendship", text="Let us shine a light on the strong bond between you and your pet. Choose from a list of poses or simply show off your natural interactions for the camera."></Card>
     </section>
     <section class="cta">
-      <h2>Let us help you make those unforgettable memories with your pets last forever</h2>
+      <h2>Let us help you make those unforgettable moments with your pets last forever</h2>
       <CtaButton/>
     </section>
     <section class="testimonials">
-      <h2>We have helped over 100 satisfied pet owners capture their memories</h2>
+      <h2>Over 100 pet owners satisfied with our service</h2>
       <section class="splide" id="testimonials" aria-label="Splide Basic HTML Example">
         <div class="splide__track">
           <ul class="splide__list">
@@ -61,7 +61,7 @@ import '@splidejs/splide/css';
               <div class="testimonials__card">
                 <img src="/pet-photography-site/icons/profile_3.svg" width="50px" height="50px">
                 <p>
-                  I cannot recommend Pawprint enough. Our dog was scared and stressed at first, she's not very good with strangers, but the patience and care shown by the photographer turned things around. The photoshoot took longer than planned as a result but there were no extra fees or any issues regarding that.</p>
+                  I cannot recommend Pawprint enough. Our dog was scared and stressed at first (she's not good with strangers), but the patience and care shown by the photographer helped so much. The photoshoot took a bit longer beacuae of that, but there were no extra fees or issues as a result.</p>
               </div>
             </li>
             <li class="splide__slide">
@@ -124,7 +124,7 @@ import '@splidejs/splide/css';
   }
   .intro p {
     margin-top: var(--padding-small);
-    max-width: 60ch;
+    max-width: 1000px;
     color: var(--green);
     padding-inline: var(--padding-medium);
     text-align: center;
@@ -162,13 +162,15 @@ import '@splidejs/splide/css';
     display: flex;
     margin-top: 1px;
     border: 1px solid black;
+    padding: 0.5rem;
+    gap: 0.5rem;
     box-shadow: 4px 4px 4px rgb(0 0 0 /20%);
     & img {
       width: 20%;
       height: 20%;
     }
     & p {
-      height: 300px;%;
+      height: 320px;%;
     }
   }
   @media (max-width: 750px) {
@@ -205,7 +207,7 @@ import '@splidejs/splide/css';
   new Splide( '#testimonials', {
     width: '100%',
     perPage: 3,
-    gap: '2.5rem',
+    gap: '2.8rem',
     padding: '2.4rem',
     height: 'auto',
     type: 'loop',
