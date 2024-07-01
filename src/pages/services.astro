@@ -11,25 +11,25 @@ import CtaButton from '../components/CtaButton.astro';
       <div class="hero-container">
         <section class="hero-content">
           <h1>Services that can't be beat</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, at vero aperiam deleniti, dignissimos sunt corrupti dolorum alias, exercitationem aspernatur ea perspiciatis. Eligendi repellendus ex voluptates eaque dolorum velit sed? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, at vero aperiam deleniti, dignissimos sunt corrupti dolorum alias, exercitationem aspernatur ea perspiciatis. Eligendi repellendus ex voluptates eaque dolorum velit sed?</p>
-          <CtaButton class="hide"></CtaButton>
+          <p>Let our amazing photographers capture your  pets looking their absolute best. Our team is very passionate about animals and will make sure to take only the highest quality pictures possible. We'll highlight your pet's unique personality traits and celebrate them at their absolute cutest.</p>
+          <CtaButton hide={true}></CtaButton>
         </section>
       </div>
     </div>
     <div class="wrapper">
       <section class="description">
-        <h2>Service Types</h2>
+        <h2>What makes us special?</h2>
         <div class="description-cards">
-          <Card hasBorder={true}, img="/pet-photography-site/icons/instagram.svg" heading="Simple Portrait" text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, at vero aperiam deleniti, dignissimos sunt corrupti dolorum alias, exercitationem aspernatur ea perspiciatis. Eligendi repellendus ex voluptates eaque dolorum velit sed?"></Card>
-          <Card hasBorder={true}, img="/pet-photography-site/icons/instagram.svg" heading="Simple Portrait" text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, at vero aperiam deleniti, dignissimos sunt corrupti dolorum alias, exercitationem aspernatur ea perspiciatis. Eligendi repellendus ex voluptates eaque dolorum velit sed?"></Card>
-          <Card hasBorder={true}, img="/pet-photography-site/icons/instagram.svg" heading="Simple Portrait" text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, at vero aperiam deleniti, dignissimos sunt corrupti dolorum alias, exercitationem aspernatur ea perspiciatis. Eligendi repellendus ex voluptates eaque dolorum velit sed?"></Card>
+          <Card hasBorder={true}, img="/pet-photography-site/images/evening-8429871_640.jpg" heading="Passion for Pets" text="Pets are at the heart of what we do, and we especially love helping them shine. Every day we're motivated to put in that extra effort to deliver the best possible results for our clients and their pets."></Card>
+          <Card hasBorder={true}, img="/pet-photography-site/images/pug-8632718_640.jpg" heading="Specialized Shots" text="Our sessions focus on letting your pets look as special as they are. Whether that calls for favorite locations, props, partner poses, or action shots, we'll definitely catch them at their very best."></Card>
+          <Card hasBorder={true}, img="/pet-photography-site/images/animal-468228_640.jpg" heading="Editing Expertise" text="With a few decades of experience between us, we know what it takes to elevate your pets. That's why we give every image the time and attention necessary to realize its full potential."></Card>
         </div>
       </section>
     </div>
     <div class="wrapper process-wrapper">
       <section class="process">
         <h2>The Pawprint process</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, at vero aperiam deleniti, dignissimos sunt corrupti dolorum alias, exercitationem aspernatur ea perspiciatis. Eligendi repellendus ex voluptates eaque dolorum velit sed? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, at vero aperiam deleniti, dignissimos sunt corrupti dolorum alias, exercitationem aspernatur ea perspiciatis. Eligendi repellendus ex voluptates eaque dolorum velit sed?</p>
+        <p>Not sure what to expect? Once you contact us by phone, email, or online message, we'll answer any questions you might have and help you schedule a session with us. Once we've decided on a time and place, we'll send you the contract and await your deposit. We'll then provide styling advice and consider any special requests for your selection of props and poses. That's all there is to it! You can expect a preview of some images within three days. Your gallery should be edited and ready to enjoy within two weeks, and prints will be delivered after this time.</p>
       </section>
     </div>
     <div class="wrapper">
@@ -99,7 +99,7 @@ import CtaButton from '../components/CtaButton.astro';
     content: "";
     height: 675px;
     width: 100%;
-    background-image: url('/pet-photography-site/services_hero.jpg');
+    background-image: url('/pet-photography-site/images/services_hero.jpg');
     background-size: cover;
     background-position: top;
     z-index: -1;
@@ -134,6 +134,7 @@ import CtaButton from '../components/CtaButton.astro';
   }
   .hero-content h1 {
     text-align: center;
+    font-size: 2rem;
   }
   .description {
     padding: var(--padding-large);
@@ -215,8 +216,6 @@ import CtaButton from '../components/CtaButton.astro';
       width: 100%;
       max-width: 400px;
     }
-  }
-  @media (max-width: 600px) {
     .hero, .hero:after {
       height: 450px;
     }
@@ -237,9 +236,6 @@ import CtaButton from '../components/CtaButton.astro';
       height: 300px;
     }
     .hero-content p {
-      display: none;
-    }
-    .hide {
       display: none;
     }
   }

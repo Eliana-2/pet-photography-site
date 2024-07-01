@@ -1,8 +1,8 @@
 ---
-const {text="Contact Us"} = Astro.props;
+const {hide=false, text="Contact Us"} = Astro.props;
 ---
 
-<a href="/pet-photography-site/contact">{text}</a>
+<a href="/pet-photography-site/contact" class:list={{hide: hide}}>{text}</a>
 <style>
   a {
     padding: 0.7rem 1.4rem;
@@ -15,5 +15,10 @@ const {text="Contact Us"} = Astro.props;
   }
   a:hover {
     text-decoration: underline;
+  }
+  @media (max-width: 450px) {
+    .hide {
+      display: none;
+    }
   }
 </style>
