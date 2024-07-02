@@ -116,6 +116,11 @@ import CtaButton from '../components/CtaButton.astro';
       width: auto;
     }
   }
+  @media (max-width: 600px) {
+    .summary h2 {
+      display: none;
+    }
+  }
   @media(max-width: 400px) {
     main {
       padding: var(--padding-small) 0;
@@ -142,9 +147,6 @@ import CtaButton from '../components/CtaButton.astro';
     }
     .summary {
       padding: 0 var(--padding-medium);
-    }
-    .summary h2 {
-      display: none;
     }
   }
 </style>
