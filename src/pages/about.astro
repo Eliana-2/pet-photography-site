@@ -72,6 +72,7 @@ import CtaButton from '../components/CtaButton.astro';
   }
   .story-text, .mission-text{
     padding: var(--padding-small);
+    width: 50%;
   }
   .story img {
     border-radius: 10px 0 0 10px;
@@ -110,6 +111,9 @@ import CtaButton from '../components/CtaButton.astro';
     .mission img, .story img {
       width: 100%;
       border-radius: 0;
+    }
+    .story-text, .mission-text {
+      width: auto;
     }
   }
   @media(max-width: 400px) {
