@@ -14,11 +14,11 @@ import '@splidejs/splide/css';
             <picture>
               <source media="(max-width: 599px)" srcset="/pet-photography-site/images/heroadjusted.jpeg" />
               <source media="(min-width: 600px)" srcset="/pet-photography-site/images/pexels-chevanon-1108099.jpg" />
-              <img src="/pet-photography-site/images/pexels-chevanon-1108099.jpg"/>
+              <img src="/pet-photography-site/images/pexels-chevanon-1108099.jpg" class="top"/>
             </picture>
           </li>
           <li class="splide__slide" data-splide-interval="5000">
-            <img src="/pet-photography-site/images/cat-5778777_1920.jpg"/>
+            <img src="/pet-photography-site/images/cat-5778777_1920.jpg" class="top"/>
           </li>
           <li class="splide__slide" data-splide-interval="5000">
             <img src="/pet-photography-site/images/guinea-pig-2513177_1920.jpg"/>
@@ -95,6 +95,9 @@ import '@splidejs/splide/css';
     width: 100%;
     height: 90vh;
     object-fit: cover;
+  }
+  .top {
+    object-position: top;
   }
   #hero-carousel {
     width: 100%;
