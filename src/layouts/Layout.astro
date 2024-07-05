@@ -21,12 +21,12 @@ const currentPath = pathname.slice(1);
 	<body>
     <header class={headerShadow ? "header-shadow" : ""}>
       <nav>
-        <a class="mobile-logo" aria-label="Home" href="/pet-photography-site/"><img src="/pet-photography-site/icons/logo.svg" class="logo" height="62"></a>
-        <button class="nav-button"><img src="/pet-photography-site/icons/menu.svg" class="nav-icon"></button>
+        <a class="mobile-logo" href="/pet-photography-site/"><img src="/pet-photography-site/icons/logo.svg" alt="Home" class="logo" height="62"></a>
+        <button class="nav-button"><img src="/pet-photography-site/icons/menu.svg" alt="Navigation Menu" class="nav-icon"></button>
         <div class="nav-links">
           <a class={currentPath === "pet-photography-site" ? "nav-link active" : "nav-link"} href="/pet-photography-site/about">About</a>
           <a class={currentPath === "pet-photography-site" ? "nav-link active" : "nav-link"} href="/pet-photography-site/gallery">Gallery</a>
-          <a class="nav-link-logo" href="/pet-photography-site/" aria-label="Home"><img src="/pet-photography-site/icons/logo.svg" class="logo" height="68"></a>
+          <a class="nav-link-logo" href="/pet-photography-site/"><img src="/pet-photography-site/icons/logo.svg" alt="Home" class="logo" height="68"></a>
           <a class={currentPath === "pet-photography-site" ? "nav-link active" : "nav-link"} href="/pet-photography-site/services">Services</a>
           <a class={currentPath === "pet-photography-site" ? "nav-link active" : "nav-link"} href="/pet-photography-site/contact">Contact</a>
         </div>
@@ -44,13 +44,13 @@ const currentPath = pathname.slice(1);
           111-222-333
           </address>
         </div>
-        <a class="footer-logo" href="/pet-photography-site/"><img src="/pet-photography-site/icons/logo_dark.svg" class="logo" height="68"></a>
+        <a class="footer-logo" href="/pet-photography-site/"><img src="/pet-photography-site/icons/logo_dark.svg" alt="Pawprint Photography Home" class="logo" height="68"></a>
         <div class="footer-socials">
           <p>Follow us on</p>
           <div class="socials">
-            <a class="social link" href="" aria-label="Instagram"><img src="/pet-photography-site/icons/instagram.svg" class="social" height="37"></a>
-            <a class="social link" href="" aria-label="Facebook"><img src=/pet-photography-site/icons/facebook.svg class="social" height="37"></a>
-            <a class="social link" href="" aria-label="Twitter"><img src="/pet-photography-site/icons/twitter.svg" class="social" height="37"></a>
+            <a class="social link" href="" ><img src="/pet-photography-site/icons/instagram.svg" alt="Instagram" class="social" height="37"></a>
+            <a class="social link" href="" ><img src=/pet-photography-site/icons/facebook.svg alt="Facebook" class="social" height="37"></a>
+            <a class="social link" href="" ><img src="/pet-photography-site/icons/twitter.svg" alt="Twitter" class="social" height="37"></a>
           </div>
         </div>
       </div>
